@@ -6,6 +6,10 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vite.dev/config/
 export default defineConfig({
+  server: {
+    host: '0.0.0.0',  // 외부에서 접속 허용
+    port: 5173
+  },
   plugins: [
     vue(),
     vueDevTools(),
