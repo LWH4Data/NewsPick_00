@@ -7,8 +7,9 @@ pip install -r requirements.txt
 ```
 
 *개별로 설치하는 방법*
+python 3.10 기준
 ```bash
-pip install django djangorestframework django-rest-swagger djangorestframework-simplejwt markdown django-filter pykafka apache-flink
+pip install django djangorestframework drf_yasg djangorestframework-simplejwt markdown django-filter pykafka apache-flink install django-allauth django-cors-headers
 ```
 
 ## Django Start
