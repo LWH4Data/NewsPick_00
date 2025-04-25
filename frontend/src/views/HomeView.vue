@@ -2,7 +2,9 @@
   <v-app>
     <!-- ✅ 상단 네비게이션 바 -->
     <v-app-bar app color="white" elevation="1">
-      <v-toolbar-title class="text-black font-weight-bold">NewsPick</v-toolbar-title>
+      <v-toolbar-title class="text-black font-weight-bold">
+        <v-img :src="logo" alt="NewsPick Logo" height="100" width="100" class="mr-2" />
+      </v-toolbar-title>
 
       <v-spacer></v-spacer>
 
@@ -74,6 +76,8 @@
 
 <script setup>
 import { ref } from 'vue'
+import logo from '@/assets/NewsPick.svg'
+
 
 const searchQuery = ref('')
 
