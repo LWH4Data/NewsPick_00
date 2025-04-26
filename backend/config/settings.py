@@ -9,7 +9,6 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-import os  # 맨 위에 추가되어 있어야 합니다
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -32,14 +31,14 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'accounts', # 사용자 인증 관련 앱
-    'news_api',
+    'news_api', # 개발자가 만든 앱
     
     'rest_framework', # REST API 프레임워크
     'rest_framework.authtoken', # JWT 토큰 인증
     'drf_yasg', # Swagger 문서화 도구
     
     'dj_rest_auth',  # 이메일, 비밀번호 기반 회원가입
-    'django.contrib.sites',
+    'django.contrib.sites', # 사이트 도메인 관리 및 인증 기능 연동
     
     # 👉 django-allauth: 이메일/소셜 로그인 등 인증 통합 관리
     'allauth',                  # allauth의 핵심 기능 제공
@@ -48,6 +47,7 @@ INSTALLED_APPS = [
 
     'corsheaders', # CORS 해결을 위한 패키지
 
+    # 장고 기본 앱들
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -118,11 +118,11 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('POSTGRES_DB', 'newspick'),
-        'USER': os.getenv('POSTGRES_USER', 'newspick_user'),
-        'PASSWORD': os.getenv('POSTGRES_PASSWORD', 'newspick_pass'),
-        'HOST': os.getenv('POSTGRES_HOST', 'db'),  # docker-compose의 서비스 이름
-        'PORT': os.getenv('POSTGRES_PORT', '5432'),
+        'NAME': 'news',  # db_name
+        'USER': 'ssafynews',  # db_user
+        'PASSWORD': 'ssafynews13',  # user_pw
+        'HOST': 'localhost',  # host_ip or domain
+        'PORT': '5432',  # port
     }
 }
 
@@ -164,13 +164,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = '/static/'
-
-STATICFILES_DIRS = [
-    BASE_DIR / 'static',  # 개발 중 정적 파일 경로
-]
-
-STATIC_ROOT = BASE_DIR / 'staticfiles'  # collectstatic 결과 저장 위치
-
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
