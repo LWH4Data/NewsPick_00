@@ -10,8 +10,8 @@ pip install -r requirements.txt
 python 3.10 기준 
 장고 세팅 
 ```bash
-pip install django djangorestframework drf_yasg djangorestframework-simplejwt markdown django-filter django-allauth django-cors-headers
-```
+pip install django djangorestframework drf_yasg djangorestframework-simplejwt markdown django-filter django-allauth django-cors-headers dj_rest_auth psycopg2 pgvector requests
+``` 
 kafka 설치
 ```bash
 pip install kafka-python
