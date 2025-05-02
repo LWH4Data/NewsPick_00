@@ -2,6 +2,27 @@
 
 **NewsPick**은 사용자의 관심사 기반으로 뉴스를 큐레이션하고,  
 스크랩 · 분석 · 요약까지 가능한 **AI 기반 뉴스 추천 플랫폼**입니다.
+---
+## 사용법
+1. infra를 실행 (airflow, kafka, redis, postgresql, spark)
+```bash
+cd 01_infra
+docker compose up -d
+```
+2. django 실행을 통해 db 생성
+```bash
+cd ../02_web/backend
+source venv/Scripts/activate
+pip install -r requirements.txt
+python manage.py makemigrations
+python manage.py migrate
+```
+3. rss, kafka, openai 실행
+```bash
+cd ../03_data
+python producer/producer.py
+python consumer/consumer.py
+```
 
 ---
 

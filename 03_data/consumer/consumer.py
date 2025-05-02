@@ -19,7 +19,7 @@ client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 
 # PostgreSQL 연결 URL
-DATABASE_URL = "postgresql://ssafynews:ssafynews13@localhost:5432/news"
+DATABASE_URL = "postgresql://ssafynews:ssafynews13@localhost:5433/news"
 
 # 데이터베이스 엔진 생성
 engine = create_engine(DATABASE_URL)

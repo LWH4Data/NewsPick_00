@@ -24,6 +24,10 @@ pip install beautifulsoup4
 pip install sqlalchemy
 ```
 
+openai 설치
+```bash
+pip install openai
+```
 
 pyflink 설치 (일단은 안씀)
 ```bash
@@ -34,10 +38,6 @@ pyflink는 jar 파일도 필요
 curl -O https://repo1.maven.org/maven2/org/apache/flink/flink-connector-kafka/3.0.0/flink-connector-kafka-3.0.0.jar
 ```
 
-openai 설치
-```bash
-pip install openai
-```
 
 
 ## Django Start

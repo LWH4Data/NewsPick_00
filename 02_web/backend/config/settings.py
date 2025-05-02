@@ -122,7 +122,7 @@ DATABASES = {
         'USER': 'ssafynews',  # db_user
         'PASSWORD': 'ssafynews13',  # user_pw
         'HOST': 'localhost',  # host_ip or domain
-        'PORT': '5432',  # port
+        'PORT': '5433',  # port
     }
 }
 
